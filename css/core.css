@@ -7,6 +7,8 @@
 .centered {
     text-align: center !important;
     vertical-align: center !important;
+    float: none;
+    horiz-align: center;
 }
 
 .wrapper {

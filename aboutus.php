@@ -19,7 +19,7 @@
 <p class="centered page_text">Nemo</p>
 <p class="centered page_text">Jeremy</p>
 <p class="centered page_text">Réne</p>
-<p class="centered page_text">Johannes [so nützlich wie ein platzhalter]</p>
+<p class="centered page_text">Johannes</p>
 <img class="mx-auto d-block" style="text-align: center;" height="250" width="270" src="assets/img/gymnasium_st_michael.jpg" />
 <br />
 <p class="centered page_text">Wir besuchen aktuell das St. Michael Gymnasium Ahlen.</p>

@@ -6,6 +6,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/navbar.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA316TXyYC1uWRw1cZc0b7G6tJQgEXeUg8&callback=myMap"></script>
 </head>
 <body>
 <?php readfile("layouts/navbar.html") ?>
@@ -38,6 +39,40 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+
+$stmt = $pdo->prepare("SELECT * FROM locations WHERE id = ?");
+$stmt->execute([$_GET["id"]]);
+$res = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
+
+
+
+<h1 class="centered page_text"><?= $res["name"] ?></h1>
+
+<br />
+
+<p class="centered page_text"><?= $res["description"] ?></p>
+<br />
+<p class="centered page_text">Ort:</p>
+<div id="googleMap" class="centered mx-auto d-block" style="width:600px; height:400px;"></div>
+
+<script>
+    function initMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(<?php echo $res["xCoord"].", ".$res["yCoord"]; ?>),
+            zoom: 17,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        map.setZoom(17);
+
+        new google.maps.Marker({
+            position : new google.maps.LatLng(<?php echo $res["xCoord"].", ".$res["yCoord"]; ?>),
+            map : map
+        });
+    }
+
+    initMap();
+</script>
+
 </body>
 </html>

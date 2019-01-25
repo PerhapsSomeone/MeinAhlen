@@ -101,6 +101,8 @@ function elipsis ($text, $words = 15) {
                 $i++;
             }
 
+            echo "<p>Alle Orte sehen</p>";
+
             echo "</div></div></div>";
 
             ?>
