@@ -7,5 +7,7 @@
             "email": "ma2003br@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^3.2"
+    }
 }
