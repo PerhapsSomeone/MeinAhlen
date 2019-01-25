@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Source+Sans+Pro');
+
+.page_text {
+    font-family: Montserrat;
+}
+
+.centered {
+    text-align: center !important;
+    vertical-align: center !important;
+}
+
+.wrapper {
+    text-align: center;
+}
+.wrapper ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom:1;
+    *display: inline;
+}
+.wrapper li {
+    float: left;
+    padding: 2px 5px;
+    border: 1px solid black;
+}

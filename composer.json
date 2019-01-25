@@ -1,0 +1,11 @@
+{
+    "name": "marc/mein-ahlen-remastered",
+    "type": "project",
+    "authors": [
+        {
+            "name": "PerhapsSomeone",
+            "email": "ma2003br@gmail.com"
+        }
+    ],
+    "require": {}
+}
