@@ -6,7 +6,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/navbar.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA316TXyYC1uWRw1cZc0b7G6tJQgEXeUg8&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA316TXyYC1uWRw1cZc0b7G6tJQgEXeUg8" data-cfasync="false"></script>
 </head>
 <body>
 <?php readfile("layouts/navbar.html") ?>
