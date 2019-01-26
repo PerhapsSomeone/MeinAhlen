@@ -65,7 +65,7 @@ function elipsis ($text, $words = 15) {
 
 ?>
 
-<img src="assets/img/rsz_1ahlen_header_c_stadt_ahlen-1800x900.png" width="100%" />
+<img src="assets/img/rsz_1ahlen_header_c_stadt_ahlen-1800x900.webp" width="100%" />
 
 <div class="container">
     <div class="vertical-tabs">
@@ -92,12 +92,12 @@ function elipsis ($text, $words = 15) {
             }
             echo "</ul><div class=\"tab-content\">";
 
-            echo "<div class=\"tab-pane active\" id='pag1' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$active_location["name"]."</h3> <p>".elipsis($active_location["description"], 10)."<br /><a href='view.php?id=".$active_location["id"]."'>Mehr sehen</a></p> </div> </div>";
+            echo "<div class=\"tab-pane active\" id='pag1' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$active_location["name"]."</h3> <p class='page_text'>".elipsis($active_location["description"], 10)."<br /><a href='view.php?id=".$active_location["id"]."'>Mehr sehen</a></p> </div> </div>";
 
             $i = 2;
 
             foreach ($locations as $location) {
-                echo "<div class=\"tab-pane\" id='pag".$i."' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$location["name"]."</h3> <p>".elipsis($location["description"], 10)."<br /><a href='view.php?id=".$location["id"]."'>Details sehen</a></p> </div> </div>";
+                echo "<div class=\"tab-pane\" id='pag".$i."' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$location["name"]."</h3> <p class='page_text'>".elipsis($location["description"], 10)."<br /><a href='view.php?id=".$location["id"]."'>Details sehen</a></p> </div> </div>";
                 $i++;
             }
 

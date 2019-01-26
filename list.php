@@ -88,12 +88,12 @@
             }
             echo "</ul><div class=\"tab-content\">";
 
-            echo "<div class=\"tab-pane active\" id='pag1' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$active_location["name"]."</h3> <p>".elipsis($active_location["description"], 30)."<br /><a href='view.php?id=".$active_location["id"]."'>Mehr sehen</a></p> </div> </div>";
+            echo "<div class=\"tab-pane active\" id='pag1' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$active_location["name"]."</h3> <p class='page_text'>".elipsis($active_location["description"], 30)."<br /><a href='view.php?id=".$active_location["id"]."'>Mehr sehen</a></p> </div> </div>";
 
             $i = 2;
 
             foreach ($locations as $location) {
-                echo "<div class=\"tab-pane\" id='pag".$i."' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$location["name"]."</h3> <p>".elipsis($location["description"], 30)."<br /><a href='view.php?id=".$location["id"]."'>Mehr sehen</a></p> </div> </div>";
+                echo "<div class=\"tab-pane\" id='pag".$i."' role=\"tabpanel\"> <div class=\"sv-tab-panel\"> <h3>".$location["name"]."</h3> <p class='page_text'>".elipsis($location["description"], 30)."<br /><a href='view.php?id=".$location["id"]."'>Mehr sehen</a></p> </div> </div>";
                 $i++;
             }
 
