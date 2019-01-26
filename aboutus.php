@@ -14,12 +14,12 @@
 <h1 class="centered page_text">Über uns</h1>
 <p class="centered page_text">Diese Webseite ist das Produkt eines Projektes einer 6-köpfingen Gruppe in dem Fach Sozialwissenschaften.</p>
 <p class="centered page_text">Wir sind mehrere Jugendliche aus Ahlen und der Umgebung und finden, es gibt viel Interessantes in Ahlen zu entdecken, doch oft ist man schlecht informiert oder findet diese Orte nicht.<br />Wir wollen die Lösung schaffen mit unserer Mein Ahlen Jugendwebseite.<br />Hier gibt es immer die neuesten und besten Events und Orte in Ahlen zu entdecken.</p>
-<p class="centered page_text">Marc</p>
-<p class="centered page_text">Leonard</p>
-<p class="centered page_text">Nemo</p>
-<p class="centered page_text">Jeremy</p>
-<p class="centered page_text">Réne</p>
-<p class="centered page_text">Johannes</p>
+<p class="centered page_text">Marc (Entwicklung)</p>
+<p class="centered page_text">Leonard (Artikel)</p>
+<p class="centered page_text">Nemo (Ressourcen / Präsentation)</p>
+<p class="centered page_text">Jeremy (Ressourcen)</p>
+<p class="centered page_text">Réne (Ressourcen)</p>
+<p class="centered page_text">Johannes (Ressourcen)</p>
 <img class="mx-auto d-block" style="text-align: center;" height="250" width="270" src="assets/img/gymnasium_st_michael.jpg" />
 <br />
 <p class="centered page_text">Wir besuchen aktuell das St. Michael Gymnasium Ahlen.</p>

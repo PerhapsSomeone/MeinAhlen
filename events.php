@@ -35,6 +35,78 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+$futureEventsStmt = $pdo->prepare("SELECT * FROM `events` WHERE date >= NOW() ORDER BY date LIMIT 20;");
+$pastEventsStmt = $pdo->prepare("SELECT * FROM `events` WHERE date < NOW() ORDER BY date DESC LIMIT 5;");
+
 ?>
+
+<h1 class="centered page_text">Events in Ahlen</h1>
+<br />
+<p class="centered page_text">In Zukunft:</p>
+<div class="centered page_text">
+    <?php
+
+    function elipsis ($text, $words = 15) {
+        // Check if string has more than X words
+        if (str_word_count($text) > $words) {
+
+            // Extract first X words from string
+            preg_match("/(?:[^\s,\.;\?\!]+(?:[\s,\.;\?\!]+|$)){0,$words}/", $text, $matches);
+            $text = trim($matches[0]);
+
+            // Let's check if it ends in a comma or a dot.
+            if (substr($text, -1) == ',') {
+                // If it's a comma, let's remove it and add a ellipsis
+                $text = rtrim($text, ',');
+                $text .= ' [mehr lesen]';
+            } else if (substr($text, -1) == '.') {
+                // If it's a dot, let's remove it and add a ellipsis (optional)
+                $text = rtrim($text, '.');
+                $text .= ' [mehr lesen]';
+            } else {
+                // Doesn't end in dot or comma, just adding ellipsis here
+                $text .= ' [mehr lesen]';
+            }
+        }
+        // Returns "ellipsed" text, or just the string, if it's less than X words wide.
+        return $text;
+    }
+
+    $futureEventsStmt->execute();
+    $futureEvents = $futureEventsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($futureEvents as $event) {
+        echo "<hr />";
+        echo "<p class='centered page_text'>".$event["name"]."</p>";
+        echo "<p class='centered page_text'>".elipsis($event["description"], 30)."</p>";
+        echo "<p class='centered page_text'> <i class=\"fas fa-fw fa-calendar-day centered\"></i>".date_format(new \DateTime($event["date"]), 'd.m.y')."</p>";
+        echo "<a href='view_event.php?id=".$event["id"]."'>Mehr sehen</a>";
+        echo "<hr />";
+    }
+
+    ?>
+
+    <br />
+    <br />
+
+    <p class="centered page_text">Letzte Events: </p>
+
+    <?php
+
+    $pastEventsStmt->execute();
+    $pastEvents = $pastEventsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($pastEvents as $event) {
+        echo "<hr />";
+        echo "<p class='centered page_text'>".$event["name"]."</p>";
+        echo "<p class='centered page_text'>".elipsis($event["description"], 30)."</p>";
+        echo "<p class='centered page_text'> <i class=\"fas fa-fw fa-calendar-day centered\"></i>".date_format(new \DateTime($event["date"]), 'd.m.y')."</p>";
+        echo "<a href='view_event.php?id=".$event["id"]."'>Mehr sehen</a>";
+        echo "<hr />";
+    }
+
+    ?>
+
+</div>
 </body>
 </html>
