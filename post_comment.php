@@ -32,11 +32,24 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-echo $_POST["article_id"];
+function SmartCensor($string)
+{
+    $illegal = array(";", "-", ".", "_", "^");
+    $BadWords = array("ass", "bitch", "hure", "fuck", "pisser", "verpiss", "fick", "scheisse", "scheiß");
+    $RePlace = array("***", "*****", "****", "****", "pi****", "verp***", "****", "sch*****", "sch***");
+    $ex = explode(" ", $string);
 
-var_dump($_POST);
+    for ($i = 0; $i <= count($ex); $i++) {
+        $x = str_ireplace($illegal, "", $ex[$i]);
+        if (in_array($x, $BadWords)) {
+            $ex[$i] = str_ireplace($BadWords, $RePlace, $x);
+        }
+    }
+    return implode(" ", $ex);
+}
 
-echo is_numeric($_POST["article_id"]);
+$_POST["content"] = SmartCensor($_POST["content"]);
+
 
 $stmt = $pdo->prepare("INSERT INTO `comments` (`id`, `parent_article`, `date`, `content`, `username`) VALUES (NULL, ?, CURRENT_TIMESTAMP, ?, ?)");
 $stmt->execute(array($_POST["article_id"], $_POST["content"], $_POST["username"]));
