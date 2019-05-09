@@ -40,7 +40,7 @@ $pastEventsStmt = $pdo->prepare("SELECT * FROM `events` WHERE date < NOW() ORDER
 
 ?>
 
-<h1 class="centered page_text">Events in Ahlen</h1>
+  <h1 class="centered page_text heading"><u>Events in Ahlen</u></h1>
 <br />
 <p class="centered page_text">In Zukunft:</p>
 <div class="centered page_text">

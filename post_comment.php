@@ -35,8 +35,8 @@ try {
 function SmartCensor($string)
 {
     $illegal = array(";", "-", ".", "_", "^");
-    $BadWords = array("ass", "bitch", "hure", "fuck", "pisser", "verpiss", "fick", "scheisse", "scheiß");
-    $RePlace = array("***", "*****", "****", "****", "pi****", "verp***", "****", "sch*****", "sch***");
+    $BadWords = array("bitch", "hure", "fuck", "pisser", "verpiss", "fick", "scheisse", "scheiß");
+    $RePlace = array("*****", "****", "****", "pi****", "verp***", "****", "sch*****", "sch***");
     $ex = explode(" ", $string);
 
     for ($i = 0; $i <= count($ex); $i++) {
